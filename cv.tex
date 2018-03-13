@@ -15,6 +15,7 @@
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{xifthen}
+\usepackage{setspace}
 
 % make colors
 \definecolor{lightColor}{HTML}{9a9c9d}
@@ -27,7 +28,7 @@
 \colorlet{bullet}{lightColor}
 \colorlet{setting}{lightColor}
 \colorlet{divider}{lightColor}
-\colorlet{link}{lightColor}
+\colorlet{link}{darkColor}
 
 % settings
 \author{Jack Cogdill}
@@ -47,13 +48,20 @@
 
 % renew commands
 \renewcommand{\baselinestretch}{1}
+\newcommand{\socialsep}{\quad{\color{lightColor}\textbar}\quad}
 \renewcommand{\maketitle}{
-    \begin{minipage}{0.62\linewidth}
-        {\color{title}\huge\bfseries\theauthor}
-        \hfill
-        {\small\color{link} \href{http://jackcogdill.us/}{jackcogdill.us} | \href{mailto:jackcog@vt.edu}{jackcog@vt.edu}}
+    \begin{minipage}[t]{0.45\textwidth}
+        \color{title}\fontsize{28pt}{1em}\bfseries\theauthor
+    \end{minipage}%
+    \begin{minipage}[t]{0.55\textwidth}
+        \begin{spacing}{1.3}
+            \color{lightColor} 200 Eheart St SE, Apt. 1, Blacksburg, VA 24060 \\
+            \color{link}
+            \href{http://jackcogdill.us/}{jackcogdill.us} \socialsep
+            \href{mailto:jackcog@vt.edu}{jackcog@vt.edu} \socialsep
+            (765) 314-1337
+        \end{spacing}
     \end{minipage}
-    \vspace{3em}
 }
 
 % new commands
