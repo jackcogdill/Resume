@@ -1,0 +1,180 @@
+\documentclass[9pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[lmargin=10em, rmargin=5em, bmargin=5em, tmargin=5em]{geometry}
+\usepackage[document]{ragged2e}
+\usepackage[none]{hyphenat}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{titling}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xifthen}
+
+\definecolor{accent}{HTML}{fd5c63}
+\definecolor{title}{HTML}{333333}
+\definecolor{section}{HTML}{aaaaaa}
+\definecolor{subsection}{HTML}{333333}
+\definecolor{paragraph}{HTML}{aaaaaa}
+\definecolor{setting}{HTML}{aaaaaa}
+\definecolor{divider}{HTML}{aaaaaa}
+\colorlet{link}{accent}
+
+\setmainfont{Roboto}
+\pagenumbering{gobble}
+\maxdeadcycles=200
+\flushbottom
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=link
+}
+
+\author{Jack Cogdill}
+
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\maketitle}{
+    \begin{minipage}{0.62\linewidth}
+        {\hspace{0.25em}\color{title}\huge\bfseries\theauthor}
+        \hfill
+        {\small \href{http://jackcogdill.us/}{jackcogdill.us} / \href{mailto:jackcog@vt.edu}{jackcog@vt.edu}}
+    \end{minipage}
+    \vspace{4em}
+}
+
+\titleformat{\section}
+    {\color{section}\Large\bfseries}
+    {}
+    {0em}
+    {}[\color{divider}\dotfill]
+\titleformat{\paragraph}
+    {\color{paragraph}}
+    {}
+    {0em}
+    {}
+
+\titlespacing{\paragraph}
+    {0.25em}{0em}{0em}
+\titlespacing{\section}
+    {0.25em}{0em}{0em}
+
+\newcommand{\ChronoSubsection}[5]{
+    \makebox(-5,-2)[rt]{\footnotesize\color{setting}\textit{\shortstack[r]{#3\\\\#4}}}
+    \makebox(0,0)[lt]{\large\bfseries\color{subsection}%
+        #1%
+        \ifthenelse{\isempty{#2}}%
+            {}% Nothing
+            {, #2}%
+        }
+    \vspace{1em}
+    #5
+}
+
+\newcommand{\ChronoParagraph}[2]{
+    \paragraph{#1 | {\footnotesize\textit{#2}}}
+}
+
+\newcommand{\Subsection}[2]{
+    \makebox(-5,-2)[rt]{}
+    \makebox(0,0)[lt]{\normalsize\bfseries\color{subsection}#1}
+    \vspace{1em}
+    #2
+}
+
+\begin{document}
+
+\maketitle
+
+\columnratio{0.64,}
+\begin{paracol}{2}
+    \begin{leftcolumn}
+        \section{Experience}
+            \ChronoSubsection{Software Engineer Intern}{Capital One}{Richmomnd, VA}{June -- Aug. 2018}{
+                \paragraph{Upcoming software engineer intern}
+            }
+            \vfill
+            \ChronoSubsection{Software Development Intern}{Faithlife}{Bellingham, WA}{May -- Aug. 2017}{
+                \paragraph{Used C\#, JavaScript, CSS to contribute features and bug fixes to production}
+                \paragraph{Worked on team of senior developers and participated in sprint meetings}
+                \paragraph{Got coffee with 25+ employees from all departments, learning dev. process}
+                \paragraph{Worked on a team with a marketer, developer, intern for internal hackathon}
+            }
+        \vfill
+        \section{Projects}
+            \ChronoSubsection{Bird Song}{}{Duke University}{Oct. 2017}{
+                \paragraph{Worked with a team of three at HackDuke to develop a swarm intelligence platform for classifying bird songs in noisy environments}
+                \paragraph{Personally used JavaScript for the backend server and client code to update the website real-time with all users' inputs using WebSockets}
+            }
+            \vfill
+            \ChronoSubsection{Hack Attack}{}{UMD \& Virginia Tech}{Apr. -- May 2017}{
+                \paragraph{Worked with a team of three at Bitcamp and later expanded on the project for a Facebook event hosted by Hackers at VT}
+                \paragraph{Used PHP, JavaScript, and CSS to develop a website with one-on-one real-time challenges intended to teach basic programming and security}
+                \paragraph{Created a tournament-style bracket with over 95 participants who competed in the cryptography and capture the flag challenges}
+            }
+            \vfill
+            \ChronoSubsection{Stealth PNG}{}{Charlotte, NC}{Apr. 2014}{
+                \paragraph{Used C to write a steganography program to hide data inside PNG images}
+                \paragraph{Works by storing the encrypted data in the least two significant bits of pixels' color components (looks unchanged to the human eye)}
+            }
+        \pagebreak
+    \end{leftcolumn}
+    \begin{rightcolumn}
+        \section{Education}
+            \Subsection{Virginia Tech}{
+                \paragraph{Expected Graduation: Dec. 2018}
+                \paragraph{B.S. in Computer Science}
+                \paragraph{3.73 GPA}
+                \paragraph{Minor in Japanese Studies}
+            }
+        \vfill
+        \section{Involvement}
+            \Subsection{Hackers at VT}{
+                \ChronoParagraph{Advertising Head}{Summer '17--Present}
+                \ChronoParagraph{Web Designer}{Fall '16--Spring '19}
+            }
+            \vfill
+            \Subsection{Computer Science Dept.}{
+                \ChronoParagraph{Student Ambassador}{Fall '16--Present}
+            }
+            \vfill
+            \Subsection{CodePath University}{
+                \ChronoParagraph{Teaching Assistant}{Fall '16}
+            }
+            \vfill
+            \Subsection{Computer Science Mentoring}{
+                \ChronoParagraph{Mentor}{Fall '16--Present}
+            }
+            \vfill
+            \Subsection{Programming Team}{
+                \ChronoParagraph{ACM-ICPC Member}{Spring '16, '17}
+            }
+            \vfill
+            \Subsection{Running Club at VT}{
+                \ChronoParagraph{Webmaster}{Spring '16--Spring '17}
+            }
+            \vfill
+            \Subsection{Boy Scouts of America}{
+                \ChronoParagraph{Eagle Scout}{Winter '12--Present}
+            }
+        \vfill
+        \section{Skills}
+            \Subsection{Coding}{
+                \paragraph{Proficient in Java, JavaScript, HTML,}
+                \paragraph{CSS, Pug, Sass/SCSS}
+                \paragraph{Familiar with C, jQuery, Node.js,}
+                \paragraph{Angular, TypeScript, SQL}
+            }
+            \vfill
+            \Subsection{Software}{
+                \paragraph{git, Gulp, Maven, Linux, Latex, Chai,}
+                \paragraph{Sinon, IBM Rational, Protractor,}
+                \paragraph{Jasmine, Mocha, Karma}
+            }
+        \pagebreak
+    \end{rightcolumn}
+\end{paracol}
+
+\end{document}

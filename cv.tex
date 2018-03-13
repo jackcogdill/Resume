@@ -1,0 +1,172 @@
+\documentclass[9pt]{extarticle}
+
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[lmargin=10em, rmargin=5em, bmargin=5em, tmargin=5em]{geometry}
+\usepackage[document]{ragged2e}
+\usepackage[none]{hyphenat}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{titling}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xifthen}
+
+% make colors
+\definecolor{lightColor}{HTML}{9a9c9d}
+\definecolor{darkColor}{HTML}{3a3c3d}
+
+% assign colors
+\colorlet{title}{darkColor}
+\colorlet{section}{lightColor}
+\colorlet{subsection}{darkColor}
+\colorlet{bullet}{lightColor}
+\colorlet{setting}{lightColor}
+\colorlet{divider}{lightColor}
+\colorlet{link}{lightColor}
+
+% settings
+\author{Jack Cogdill}
+\setmainfont{Roboto}
+\pagenumbering{gobble}
+\maxdeadcycles=200
+\flushbottom
+\setlength\parindent{0pt}
+\setlist[trivlist]{itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+% title formatting
+\titleformat{\section}
+    {\color{section}\Large\bfseries}
+    {}
+    {0em}
+    {}[\color{divider}\vskip0.5em\hrule height 0.25pt]
+
+% renew commands
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\maketitle}{
+    \begin{minipage}{0.62\linewidth}
+        {\color{title}\huge\bfseries\theauthor}
+        \hfill
+        {\small\color{link} \href{http://jackcogdill.us/}{jackcogdill.us} | \href{mailto:jackcog@vt.edu}{jackcog@vt.edu}}
+    \end{minipage}
+    \vspace{3em}
+}
+
+% new commands
+\newcommand{\ChronoSubsection}[5]{
+    \makebox(-5,5)[rt]{\footnotesize\color{setting}\textit{\shortstack[r]{#3\\#4}}}
+    {\hspace{-0.25em}\large\bfseries\color{subsection}%
+        #1%
+        \ifthenelse{\isempty{#2}}%
+            {}% Nothing
+            {, #2}%
+    }%
+    \begin{trivlist}
+        \color{bullet}
+        #5
+    \end{trivlist}
+}
+\newcommand{\Subsection}[2]{
+    {\normalsize\bfseries\color{subsection}#1}
+    \begin{trivlist}
+        \color{bullet}
+        #2
+    \end{trivlist}
+}
+\newcommand{\ChronoItem}[2]{
+    \item {\color{bullet}#1 | {\footnotesize\textit{#2}}}
+}
+
+\begin{document}
+\maketitle
+\columnratio{0.64,}
+\begin{paracol}{2}
+    \begin{leftcolumn}
+        \section{Experience}
+            \ChronoSubsection{Software Engineer Intern}{Capital One}{Richmond, VA}{June -- Aug. 2018}{
+                \item Upcoming software engineer intern
+            }
+            \vfill
+            \ChronoSubsection{Software Development Intern}{Faithlife}{Bellingham, WA}{May -- Aug. 2017}{
+                \item Used C\#, JavaScript, CSS to contribute features and bug fixes to production
+                \item Worked on team of senior developers and participated in sprint meetings
+                \item Worked on a team with a marketer, developer, intern for internal hackathon
+                \item Learned about all aspects of development by getting coffee with 25+ employees from executive, marketing, design, customer service
+            }
+        \vfill
+        \section{Projects}
+            \ChronoSubsection{Bird Song}{HackDuke}{Duke University}{Oct. 2017}{
+                \item Developed a swarm intelligence platform for classifying bird songs
+                \item Used JavaScript for backend server and client code
+                \item The website updates real-time with all users' input using WebSockets
+            }
+            \vfill
+            \ChronoSubsection{Hack Attack}{Bitcamp}{UMD \& Virginia Tech}{Apr. -- May 2017}{
+                \item Used PHP, JavaScript, and CSS to develop a website
+                \item 1-on-1 real-time challenges to teach basic programming and security
+                \item Expanded on project for a Facebook event hosted by Hackers at VT
+                \item Created a tournament-style bracket with 95+ participants who competed in the cryptography and capture the flag challenges
+            }
+            \vfill
+            \ChronoSubsection{Stealth PNG}{}{Charlotte, NC}{Apr. 2014}{
+                \item Used C to write a steganography program to hide data inside PNG images
+                \item Works by storing the encrypted data in the least two significant bits of pixels' color components (looks unchanged to the human eye)
+            }
+        \section{Skills}
+            \Subsection{Programming}{
+                \item Python, C, Java, Git, NodeJS, Bash, LaTeX
+            }
+            \vfill
+            \Subsection{Web}{
+                \item CSS, Sass, JavaScript, React, HTML
+            }
+            \vfill
+            \Subsection{Languages}{
+                \item English
+                \item Japanese, Limited Working Proficiency
+            }
+        \pagebreak
+    \end{leftcolumn}
+    \begin{rightcolumn}
+        \section{Education}
+            \Subsection{Virginia Tech}{
+                \item Expected Graduation: Dec. 2018
+                \item B.S. in Computer Science
+                \item 3.73 GPA
+                \item Minor in Japanese Studies
+            }
+        \vfill
+        \section{Extracurricular Activity}
+            \Subsection{Hackers at Virginia Tech}{
+                \ChronoItem{Leadership Team}{Feb. 2017 -- Present}
+            }
+            \vfill
+            \Subsection{Teaching Assistant}{
+                \ChronoItem{CS 1044, CS 2114}{Aug. 2017 -- Present}
+            }
+            \vfill
+            \Subsection{Computer Science Mentoring}{
+                \ChronoItem{Mentor}{Jan. 2018 -- Present}
+            }
+            \vfill
+            \Subsection{Kaiwa no Kai (Japanese Conversation Group)}{
+                \ChronoItem{Member}{Aug. 2015 -- Present}
+            }
+        \vfill
+        \section{Honors \& Awards}
+            \Subsection{Computer Science Resources Consortium Scholarship}{
+                \ChronoItem{Recipient}{2016 -- 2017}
+            }
+            \vfill
+            \Subsection{Deans List with Distinction}{
+                \ChronoItem{Recipient}{Spring \& Fall 2017}
+            }
+        \pagebreak
+    \end{rightcolumn}
+\end{paracol}
+
+\end{document}
