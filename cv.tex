@@ -82,17 +82,11 @@
         #5
     \end{trivlist}
 }
-\newcommand{\Subsection}[3][]{ % #1 is optional
-    {
-        \normalsize\color{subsection}\textbf{#2}%
-        \hspace{0.25em}
-        \ifthenelse{\isempty{#1}}%
-            {}% Nothing
-            {\textit{\small\color{lightColor}#1}}%
-    }
+\newcommand{\Subsection}[2]{
+    {\normalsize\color{subsection}\textbf{#1}}
     \begin{trivlist}
         \color{bullet}
-        #3
+        #2
     \end{trivlist}
 }
 \newcommand{\ChronoItem}[2]{
@@ -179,7 +173,8 @@
                 \ChronoItem{Mentor}{1/18 - Pres}
             }
             \vsubspace
-            \Subsection[(Japanese Conversation)]{Kaiwa no Kai}{
+            \Subsection{Kaiwa no Kai}{
+                \item {\color{lightColor}\textit{(Japanese Conversation Group)}}
                 \ChronoItem{Member}{8/15 - Pres}
             }
         \vmainspace
