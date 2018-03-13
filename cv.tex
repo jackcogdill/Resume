@@ -2,7 +2,7 @@
 
 % packages
 \usepackage[utf8]{inputenc}
-\usepackage[lmargin=11em, rmargin=6em, bmargin=6em, tmargin=6em]{geometry}
+\usepackage[lmargin=10em, rmargin=5em, bmargin=5em, tmargin=5em]{geometry}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{paracol}
@@ -66,7 +66,11 @@
 
 % new commands
 \newcommand{\ChronoSubsection}[5]{
-    \makebox(-5,5)[rt]{\footnotesize\color{setting}\textit{\shortstack[r]{#3\\#4}}}
+    \makebox(-5,5)[rt]{%
+        \ifthenelse{\isempty{#3}}%
+            {\footnotesize\color{setting}#4}% No location
+            {\footnotesize\color{setting}\textit{\shortstack[r]{#3\\#4}}}%
+    }
     {\hspace{-0.25em}\large\bfseries\color{subsection}%
         #1%
         \ifthenelse{\isempty{#2}}%
@@ -78,16 +82,22 @@
         #5
     \end{trivlist}
 }
-\newcommand{\Subsection}[2]{
-    {\normalsize\bfseries\color{subsection}#1}
+\newcommand{\Subsection}[3][]{ % #1 is optional
+    {
+        \normalsize\color{subsection}\textbf{#2}%
+        \hspace{0.25em}
+        \ifthenelse{\isempty{#1}}%
+            {}% Nothing
+            {\textit{\small\color{lightColor}#1}}%
+    }
     \begin{trivlist}
         \color{bullet}
-        #2
+        #3
     \end{trivlist}
 }
 \newcommand{\ChronoItem}[2]{
-    \item {
-        \makebox(-5,5)[rt]{\footnotesize\textit{#2}}
+    \item {%
+        \makebox(-5,5)[rt]{\footnotesize\textit{#2}}%
         \color{bullet}#1
     }
 }
@@ -97,7 +107,7 @@
 \begin{document}
 \maketitle
 \columnratio{0.64,}
-\setlength{\columnsep}{5em} % Separation between columns
+\setlength{\columnsep}{7em} % Separation between columns
 \begin{paracol}{2}
     \begin{leftcolumn}
         \section{Experience}
@@ -114,20 +124,20 @@
             }
         \vmainspace
         \section{Projects}
-            \ChronoSubsection{Bird Song}{HackDuke}{Duke University}{10/17}{
+            \ChronoSubsection{Bird Song}{HackDuke}{}{10/17}{
                 \item Developed a swarm intelligence platform for classifying bird songs
                 \item Used JavaScript for backend server and client code
                 \item The website updates real-time using WebSockets
             }
             \vsubspace
-            \ChronoSubsection{Hack Attack}{Bitcamp}{UMD \& VT}{4/17 - 5/17}{
+            \ChronoSubsection{Hack Attack}{Bitcamp}{}{4/17 - 5/17}{
                 \item Used PHP, JavaScript, and CSS to develop a website
                 \item 1-on-1 real-time challenges to teach basic programming
                 \item Expanded on for a Facebook event hosted by Hackers at VT
                 \item Created a tournament-style bracket with 95+ participants who competed in the cryptography and capture the flag challenges
             }
             \vsubspace
-            \ChronoSubsection{Stealth PNG}{}{Charlotte, NC}{4/14}{
+            \ChronoSubsection{Stealth PNG}{}{}{4/14}{
                 \item Used C to write a steganography program
                 \item Hides files or plaintext data inside PNG images
                 \item Stores the encrypted data in the least two significant bits of pixel RGB components (looks unchanged to the human eye)
@@ -169,12 +179,12 @@
                 \ChronoItem{Mentor}{1/18 - Pres}
             }
             \vsubspace
-            \Subsection{Kaiwa no Kai (Japanese Conversation Group)}{
+            \Subsection[(Japanese Conversation)]{Kaiwa no Kai}{
                 \ChronoItem{Member}{8/15 - Pres}
             }
         \vmainspace
         \section{Honors \& Awards}
-            \Subsection{Computer Science Resources Consortium Scholarship}{
+            \Subsection{CSRC Scholarship}{
                 \ChronoItem{Recipient}{8/16 - 5/18}
             }
             \vsubspace
