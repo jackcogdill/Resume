@@ -70,8 +70,8 @@
 \newcommand{\ChronoSubsection}[5]{
     \makebox(-5,5)[rt]{%
         \ifthenelse{\isempty{#3}}%
-            {\footnotesize\color{setting}#4}% No location
-            {\footnotesize\color{setting}\textit{\shortstack[r]{#3\\#4}}}%
+            {\scriptsize\color{setting}#4}% No location
+            {\scriptsize\color{setting}\textit{\shortstack[r]{#3\\#4}}}%
     }
     {\hspace{-0.25em}\normalsize\bfseries\color{subsection}%
         #1%
@@ -97,7 +97,7 @@
 }
 \newcommand{\ChronoItem}[2]{
     \item {%
-        \makebox(-5,5)[rt]{\footnotesize\color{setting}\textit{#2}}%
+        \makebox(-5,5)[rt]{\scriptsize\color{setting}\textit{#2}}%
         \color{bullet}#1
     }
 }
