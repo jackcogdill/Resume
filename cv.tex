@@ -79,10 +79,14 @@
             {}% Nothing
             {, #2}%
     }%
-    \begin{trivlist}
-        \color{bullet}
-        #5
-    \end{trivlist}
+    \ifthenelse{\isempty{#5}}%
+        {\\}% Newline
+        {%
+            \begin{trivlist}
+                \color{bullet}
+                #5
+            \end{trivlist}
+        }%
 }
 \newcommand{\Subsection}[2]{
     {\normalsize\color{subsection}\textbf{#1}}
@@ -183,9 +187,7 @@
             }
         \vmainspace
         \section{Honors \& Awards}
-            \Subsection{CSRC Scholarship}{
-                \ChronoItem{Recipient}{8/16 - 5/18}
-            }
+            \ChronoSubsection{CSRC Scholarship}{}{}{2016 - 2018}{}
             \vsubspace
             \Subsection{Dean's List with Distinction}{
                 \ChronoItem{Recipient}{5/17 - Pres}
