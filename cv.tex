@@ -70,7 +70,7 @@
 \newcommand{\ChronoSubsection}[5]{
     \makebox(-5,5)[rt]{%
         \ifthenelse{\isempty{#3}}%
-            {\scriptsize\color{setting}#4}% No location
+            {\scriptsize\color{setting}\it#4}% No location
             {\scriptsize\color{setting}\textit{\shortstack[r]{#3\\#4}}}%
     }
     {\hspace{-0.25em}\normalsize\bfseries\color{subsection}%
