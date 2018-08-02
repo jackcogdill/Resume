@@ -2,7 +2,7 @@
 
 % packages
 \usepackage[utf8]{inputenc}
-\usepackage[lmargin=10em, rmargin=5em, bmargin=5em, tmargin=5em]{geometry}
+\usepackage[lmargin=10em, rmargin=5em, bmargin=5em, tmargin=6em]{geometry}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{paracol}
@@ -50,20 +50,20 @@
 
 % renew commands
 \renewcommand{\baselinestretch}{1}
-\newcommand{\socialsep}{\quad{\color{divider}\textbar}\quad}
+\newcommand{\socialsep}{\enskip{\color{divider}\rule[-0.4ex]{0.4pt}{1.1em}\ }\enskip}
 \renewcommand{\maketitle}{
-    \begin{minipage}[t]{0.45\textwidth}
-        \color{title}\fontsize{28pt}{1em}\bfseries\theauthor
-    \end{minipage}%
-    \begin{minipage}[t]{0.55\textwidth}
-        \begin{spacing}{1.3}
-            \color{info} 1009 University City Blvd, H16, Blacksburg, VA 24060 \\
-            \color{link}
-            \href{http://jackcogdill.us/}{jackcogdill.us} \socialsep
-            \href{mailto:jackcog@vt.edu}{jackcog@vt.edu} \socialsep
-            (765) 314-1337
-        \end{spacing}
-    \end{minipage}
+    {
+        \color{title}
+        \Huge\bfseries\theauthor
+    }
+    \hfill
+    {
+        \color{link}
+        \href{http://jackcogdill.us/}{jackcogdill.us}
+        \socialsep
+        \href{mailto:jackcog@vt.edu}{jackcog@vt.edu}
+    }
+    \hfill
 }
 
 % new commands
