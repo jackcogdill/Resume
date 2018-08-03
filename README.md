@@ -4,7 +4,7 @@
 
 Compile with `xelatex cv.tex`
 
-> With [entr](http://entrproject.org/) use: `find . | entr xelatex cv.tex`
+With [entr](http://entrproject.org/) use: `ls cv.tex | entr xelatex cv.tex`
 
 ## Credits
 
