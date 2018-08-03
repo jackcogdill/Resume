@@ -103,6 +103,11 @@
         \color{bullet}#1
     }
 }
+\newcommand{\InfoItem}[1]{
+    \item {%
+        \color{info}\textit{(#1)}
+    }
+}
 \newcommand{\vsubspace}{\vspace{1.5em}}
 \newcommand{\vsmallspace}{\vspace{1em}}
 \newcommand{\vmainspace}{\vspace{2em}}
@@ -152,27 +157,14 @@
                 \item Encrypts and hides files or plain text inside PNG images
                 \item Slightly modifies pixel colors (appears unchanged to human eyes)
             }
-        \vmainspace
-        \section{Skills}
-            \Subsection{Programming}{
-                \item Proficient in Python, C, Java, CSS, JavaScript, HTML, Regex
-                \item Familiar with React, Bash, Sass, LaTeX, Node.js
-            }
-            \vsubspace
-            \Subsection{Tools}{
-                \item Proficient with Git, Linux commands, Unit Testing
-                \item Avid user of Vim
-            }
-            \vsubspace
-            \Subsection{Languages}{
-                \item Japanese, Limited Working Proficiency
-            }
     \end{leftcolumn}
     \begin{rightcolumn}
         \section{Education}
             \Subsection{Virginia Tech}{
                 \ChronoItem{B.S. in Computer Science}{Exp 12/18}
-                \item Minor in Japanese Studies
+                \item Minor in Japanese
+                \ChronoItem{CSRC Scholarship}{2016 – 2018}
+                \ChronoItem{Dean's List with Distinction}{2017 – 2018}
                 \item 3.78 GPA
             }
         \vmainspace
@@ -192,14 +184,24 @@
             }
             \vsmallspace
             \Subsection{Kaiwa no Kai}{
-                \item {\color{info}\textit{(Japanese Conversation)}}
+                \InfoItem{Japanese Conversation}
                 \ChronoItem{Member}{08/15 – Pres}
             }
         \vmainspace
-        \section{Honors \& Awards}
-            \ChronoSubsection{CSRC Scholarship}{}{}{2016 – 2018}{}
-            \vsmallspace
-            \ChronoSubsection{Dean's List with Distinction}{}{}{2017 – 2018}{}
+        \section{Skills}
+            \Subsection{Programming}{
+                \ChronoItem{Python, C, Java, CSS, JavaScript, HTML, Regex}{Proficient}
+                \ChronoItem{React, Bash, Sass, LaTeX, Node.js}{Familiar}
+            }
+            \vsubspace
+            \Subsection{Tools}{
+                \item Git, Linux commands, Vim, Unit Testing
+            }
+            \vsubspace
+            \Subsection{Languages}{
+                \item Japanese
+                \InfoItem{Limited Working Proficiency}
+            }
     \end{rightcolumn}
 \end{paracol}
 
