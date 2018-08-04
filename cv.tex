@@ -110,7 +110,9 @@
 }
 \newcommand{\vsubspace}{\vspace{1.5em}}
 \newcommand{\vsmallspace}{\vspace{1em}}
-\newcommand{\vmainspace}{\vspace{2em}}
+% The shorter column should use \vfill (swap these if one outgrows the other)
+\newcommand{\vleftspace}{\vspace{2em}}
+\newcommand{\vrightspace}{\vfill}
 
 \begin{document}
 \maketitle
@@ -139,7 +141,7 @@
                 \item Developed SQL queries for users to navigate sermon database
                 \item Created and designed children's ministry website from scratch
             }
-        \vmainspace
+        \vleftspace
         \section{Projects}
             \ChronoSubsection{Hack Attack}{Bitcamp}{College Park, MD}{04/17 – 05/17}{
                 \item Used PHP, JavaScript, CSS to develop interactive website
@@ -176,7 +178,7 @@
                 \ChronoItem{Dean's List with Distinction}{2017 – 2018}
                 \item 3.78 GPA
             }
-        \vmainspace
+        \vrightspace
         \section{Involvement}
             \Subsection{Hackers at Virginia Tech}{
                 \ChronoItem{Leadership Team}{02/17 – Pres}
@@ -196,7 +198,7 @@
                 \InfoItem{Japanese Conversation}
                 \ChronoItem{Member}{08/15 – Pres}
             }
-        \vmainspace
+        \vrightspace
         \section{Skills}
             \Subsection{Programming}{
                 \ChronoItem{Python, C, Java, CSS, JavaScript, HTML, Regex}{Proficient}
