@@ -17,19 +17,27 @@
 \usepackage{xifthen}
 \usepackage{setspace}
 
-% make colors
+% basic colors
 \definecolor{light}{HTML}{9A9C9D}
 \definecolor{middle}{HTML}{595959}
 \definecolor{dark}{HTML}{3A3C3D}
+% more colors (thank you https://github.com/posquit0/Awesome-CV/blob/master/awesome-cv.cls)
+\definecolor{pink}{HTML}{EF4089}
+\definecolor{red}{HTML}{DC3522}
+\definecolor{orange}{HTML}{FF6138}
+\definecolor{nephritis}{HTML}{27AE60}
+\definecolor{emerald}{HTML}{00A388}
+\definecolor{skyblue}{HTML}{0395DE}
+\definecolor{concrete}{HTML}{95A5A6}
+\definecolor{darknight}{HTML}{131A28}
 
 % assign colors
 \colorlet{bullet}{middle}
 \colorlet{divider}{light}
 \colorlet{info}{light}
 \colorlet{link}{dark}
-\colorlet{section}{light}
+\colorlet{section}{emerald}
 \colorlet{subsection}{dark}
-\colorlet{setting}{light}
 \colorlet{title}{dark}
 
 % settings
@@ -46,7 +54,7 @@
     {\color{section}\Large\bfseries}
     {}
     {0em}
-    {}[\color{divider}\vskip0.5em\hrule height 0.25pt width 0.92\hsize]
+    {}[\color{section}\vskip0.5em\hrule height 0.25pt width 0.92\hsize]
 
 % renew commands
 \newcommand{\socialsep}{\enskip{\color{divider}\rule[-0.4ex]{0.4pt}{1.1em}\ }\enskip}
@@ -67,7 +75,7 @@
 
 % new commands
 \newcommand{\sidebox}[1]{\makebox(-5,5)[rt]{#1}}
-\newcommand{\sidenote}[1]{\scriptsize\color{setting}\textit{#1}}
+\newcommand{\sidenote}[1]{\scriptsize\color{info}\textit{#1}}
 \newcommand{\ChronoSubsection}[5]{
     \sidebox{%
         \ifthenelse{\isempty{#3}}%
