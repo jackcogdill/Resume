@@ -105,15 +105,18 @@
     \end{trivlist}
 }
 \newcommand{\ChronoItem}[2]{
-    \item {%
-        \sidebox{\sidenote{#2}}%
-        \color{bullet}#1
-    }
+    \item
+    \sidebox{\sidenote{#2}}%
+    \color{bullet}#1
 }
 \newcommand{\InfoItem}[1]{
-    \item {%
-        \color{info}\textit{(#1)}
-    }
+    \item
+    \color{info}\textit{(#1)}
+}
+\newcommand{\Bullet}{
+    \item
+    \sidebox{\color{info}$\cdot$}%
+    \color{bullet}
 }
 
 % Column spacing
@@ -134,49 +137,49 @@
         \section{Experience}
             \ChronoSubsection{Software Engineer Intern}{Capital One}{Richmond, VA}{Summer 2018}{
                 \item Used Java to rewrite email-sending microservice for wire transfers
-                \item Deployed on AWS using Jenkins \& Docker
-                \item Improved performance from minutes to real-time using Kafka
-                \item Affects 1000+ daily users
+                \Bullet Deployed on AWS using Jenkins \& Docker
+                \Bullet  Improved performance from minutes to real-time using Kafka
+                \Bullet Affects 1000+ daily users
             }
             \vsubspace
             \ChronoSubsection{Software Development Intern}{Faithlife}{Bellingham, WA}{Summer 2017}{
                 \item Used C\#, React, CSS, Node.js to create features and bug fixes
-                \item Implemented `Reopen Closed Tab' for complicated grid layout
-                \item Developed API-agnostic speech-to-text service using WebSockets
-                \item Created a team with a marketer, developer, and intern for hackathon
+                \Bullet Implemented `Reopen Closed Tab' for complicated grid layout
+                \Bullet Developed API-agnostic speech-to-text service using WebSockets
+                \Bullet Created a team with a marketer, developer, and intern for hackathon
             }
             \vsubspace
             \ChronoSubsection{Website Intern}{Christ Covenant Church}{Charlotte, NC}{08/13 – 05/15}{
                 \item Used CSS to redesign church website navigation bar
-                \item Developed SQL queries for users to navigate sermon database
-                \item Created and designed children's ministry website from scratch
+                \Bullet Developed SQL queries for users to navigate sermon database
+                \Bullet Created and designed children's ministry website from scratch
             }
         \vleftspace
         \section{Projects}
             \ChronoSubsection{Hack Attack}{Bitcamp}{College Park, MD}{04/17 – 05/17}{
                 \item Used PHP, JavaScript, CSS to develop interactive website
-                \item Created 1-on-1 real-time challenges to teach programming
-                \item Expanded on for a Facebook event hosted by Hackers at VT
-                \item Developed cryptography and capture the flag challenges
-                \item Held a tournament with 95+ student participants
+                \Bullet Created 1-on-1 real-time challenges to teach programming
+                \Bullet Expanded on for a Facebook event hosted by Hackers at VT
+                \Bullet Developed cryptography and capture the flag challenges
+                \Bullet Held a tournament with 95+ student participants
             }
             \vsubspace
             \ChronoSubsection{Raku Manga}{}{}{04/18 – 05/18}{
-                \item Used React, Node.js, CSS to create manga/comic reader
-                \item Features bidirectional infinite scrolling for seamless reading
-                \item Auto-saves progress with cookies
+                \Bullet Used React, Node.js, CSS to create manga/comic reader
+                \Bullet Features bidirectional infinite scrolling for seamless reading
+                \Bullet Auto-saves progress with cookies
             }
             \vsubspace
             \ChronoSubsection{Bird Song}{HackDuke}{Durham, NC}{10/17}{
                 \item Created a swarm intelligence platform for classifying bird songs
-                \item Used Node.js and JavaScript to develop server and client code
-                \item The website updates real-time using WebSockets
+                \Bullet Used Node.js and JavaScript to develop server and client code
+                \Bullet The website updates real-time using WebSockets
             }
             \vsubspace
             \ChronoSubsection{Stealth PNG}{}{}{04/14}{
-                \item Used C to write a steganography program
-                \item Encrypts and hides files or plain text inside PNG images
-                \item Slightly modifies pixel colors (appears unchanged to human eyes)
+                \Bullet Used C to write a steganography program
+                \Bullet Encrypts and hides files or plain text inside PNG images
+                \Bullet Slightly modifies pixel colors (appears unchanged to human eyes)
             }
     \end{leftcolumn}
     \begin{rightcolumn}
