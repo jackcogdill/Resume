@@ -1,6 +1,6 @@
 \documentclass[9pt]{extarticle}
 
-% packages
+% Packages
 \usepackage[utf8]{inputenc}
 \usepackage[lmargin=10em, rmargin=5em, bmargin=6em, tmargin=6em]{geometry}
 \usepackage[document]{ragged2e}
@@ -17,11 +17,11 @@
 \usepackage{xifthen}
 \usepackage{setspace}
 
-% basic colors
+% Basic colors
 \definecolor{light}{HTML}{9A9C9D}
 \definecolor{middle}{HTML}{595959}
 \definecolor{dark}{HTML}{3A3C3D}
-% more colors (thank you https://github.com/posquit0/Awesome-CV/blob/master/awesome-cv.cls)
+% More colors (thank you https://github.com/posquit0/Awesome-CV/blob/master/awesome-cv.cls)
 \definecolor{pink}{HTML}{EF4089}
 \definecolor{red}{HTML}{DC3522}
 \definecolor{orange}{HTML}{FF6138}
@@ -31,7 +31,7 @@
 \definecolor{concrete}{HTML}{95A5A6}
 \definecolor{darknight}{HTML}{131A28}
 
-% assign colors
+% Assign colors
 \colorlet{bullet}{middle}
 \colorlet{divider}{light}
 \colorlet{info}{light}
@@ -40,7 +40,7 @@
 \colorlet{subsection}{dark}
 \colorlet{title}{dark}
 
-% settings
+% Settings
 \author{Jack Cogdill}
 \setmainfont{Roboto}
 \pagenumbering{gobble}
@@ -49,14 +49,14 @@
 \setlength\parindent{0pt}
 \setlist[trivlist]{itemsep=0.3em, topsep=0.3em, parsep=0pt, partopsep=0pt}
 
-% title formatting
+% Title formatting
 \titleformat{\section}
     {\color{section}\Large\bfseries}
     {}
     {0em}
     {}[\color{section}\vskip0.5em\hrule height 0.25pt width 0.92\hsize]
 
-% renew commands
+% Renew commands
 \renewcommand{\maketitle}{
     {
         \color{title}
@@ -72,7 +72,7 @@
     \hfill
 }
 
-% new commands
+% New commands
 \newcommand{\socialsep}{\enskip{\color{divider}\rule[-0.4ex]{0.4pt}{1.1em}\ }\enskip}
 \newcommand{\sidebox}[1]{\makebox(-5,5)[rt]{#1}}
 \newcommand{\sidenote}[1]{\scriptsize\color{info}\textit{#1}}
@@ -115,6 +115,8 @@
         \color{info}\textit{(#1)}
     }
 }
+
+% Column spacing
 \newcommand{\vsubspace}{\vspace{1.5em}}
 \newcommand{\vsmallspace}{\vspace{1em}}
 % The shorter column should use \vfill (swap these if one outgrows the other)
