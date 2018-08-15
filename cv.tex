@@ -74,8 +74,9 @@
 
 % New commands
 \newcommand{\socialsep}{\enskip{\color{divider}\rule[-0.4ex]{0.4pt}{1.1em}\ }\enskip}
+\newcommand{\info}[1]{\color{info}\textit{#1}}
 \newcommand{\sidebox}[1]{\makebox(-5,5)[rt]{#1}}
-\newcommand{\sidenote}[1]{\scriptsize\color{info}\textit{#1}}
+\newcommand{\sidenote}[1]{\scriptsize\info{#1}}
 \newcommand{\ChronoSubsection}[5]{
     \sidebox{%
         \ifthenelse{\isempty{#3}}%
@@ -111,7 +112,7 @@
 }
 \newcommand{\InfoItem}[1]{
     \item
-    \color{info}\textit{(#1)}
+    \info{(#1)}
 }
 \newcommand{\Bullet}{
     \item
