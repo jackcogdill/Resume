@@ -4,7 +4,7 @@
 
 Compile with `xelatex cv.tex`
 
-To recompile on save, use: `ls cv.tex | entr xelatex cv.tex`
+To recompile on save, use: `find cv.tex | entr xelatex cv.tex`
 
 More info on entr [here](http://entrproject.org/).
 
